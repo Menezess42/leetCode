@@ -10,10 +10,8 @@
 		flake-utils.lib.eachDefaultSystem (system:
 				let
 				pkgs = import nixpkgs { inherit system; };
-#enableIDE = true;
-#idePackages = if enableIDE then import ./ide-packages.nix {inherit pkgs; } else [];
 				in {
-				devShell = pkgs.mkShell {                                                                  
+				devShell = pkgs.mkShell {
 				name = "day-planner-env";
 				buildInputs = with pkgs; [
                 python311
@@ -26,14 +24,14 @@
                 python311Packages.sentinel
                 python311Packages.python-lsp-server
                 python311Packages.virtualenv
-                python311Packages.pyflakes  # Linter Pyflakes
+                python311Packages.pyflakes
                 python311Packages.isort
                         python311Packages.pandas
-				];                
-				shellHook = ''                                                           
-					echo "Welcome to the Day Planner and Investment Tracker environment!"                    
-					'';                                                                                      
-				};                                                                                         
+				];
+				shellHook = ''
+					echo "Welcome to the Day Planner and Investment Tracker environment!"
+					'';
+				};
 				}
 				);
 }
