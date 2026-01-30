@@ -26,6 +26,7 @@
                 python311Packages.virtualenv
                 python311Packages.pyflakes
                 python311Packages.isort
+                python311Packages.debugpy
                         python311Packages.pandas
 				];
 				shellHook = ''
